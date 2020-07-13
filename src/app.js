@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast =require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for express directory
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -115,6 +116,13 @@ app.get('*',(req,res)=>{
     })
 })
 
+/* Running on local
 app.listen(3000,() => {
     console.log('Server is up on port 3000')
+})
+*/
+
+//Running on herko port
+app.listen(port,() => {
+    console.log('Server is up on port ' + port)
 })
