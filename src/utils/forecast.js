@@ -55,7 +55,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find locationsss', undefined)
         } else {
-            callback(undefined, body.current)
+            callback(undefined, "The Temperature is " + body.current.humidity + "but it feels like " + body.current.feelslike + ". The humidity is " + body.current.humidity + ".")
         } 
     })
 }
